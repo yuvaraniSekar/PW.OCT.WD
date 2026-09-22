@@ -22,6 +22,7 @@ import path from "path";
 
 test("File upload",async({page})=>{
     await page.goto("https://leafground.com/file.xhtml")
+    //input tag type = file is present
     const upload =  page.locator("(//input[@type='file'])[1]")
     await upload.setInputFiles("Data/fUpload.txt")
     await page.waitForTimeout(2000)
